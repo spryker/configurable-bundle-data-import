@@ -54,9 +54,6 @@ class ConfigurableBundleTemplateSlotDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -64,9 +61,6 @@ class ConfigurableBundleTemplateSlotDataImportPluginTest extends Unit
         $this->tester->ensureConfigurableBundleTablesIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         // Arrange
@@ -89,9 +83,6 @@ class ConfigurableBundleTemplateSlotDataImportPluginTest extends Unit
         $this->tester->assertConfigurableBundleTemplateSlotDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenConfigurableBundleTemplateNotFoundByKey(): void
     {
         // Arrange
@@ -112,9 +103,6 @@ class ConfigurableBundleTemplateSlotDataImportPluginTest extends Unit
         $configurableBundleSlotDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenProductListNotFoundByKey(): void
     {
         // Arrange
@@ -137,9 +125,6 @@ class ConfigurableBundleTemplateSlotDataImportPluginTest extends Unit
         $configurableBundleSlotDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

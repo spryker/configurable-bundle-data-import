@@ -35,18 +35,12 @@ class ConfigurableBundleDataImportCommunicationTester extends Actor
 {
     use _generated\ConfigurableBundleDataImportCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureConfigurableBundleTablesIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getConfigurableBundleTemplateQuery());
         $this->ensureDatabaseTableIsEmpty($this->getConfigurableBundleTemplateSlotQuery());
     }
 
-    /**
-     * @return void
-     */
     public function ensureProductImageTablesIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getProductImageQuery());
@@ -54,11 +48,6 @@ class ConfigurableBundleDataImportCommunicationTester extends Actor
         $this->ensureDatabaseTableIsEmpty($this->getProductImageSetToProductImageQuery());
     }
 
-    /**
-     * @param string $key
-     *
-     * @return void
-     */
     public function createConfigurableBundleTemplate(string $key): void
     {
         (new SpyConfigurableBundleTemplate())
@@ -67,11 +56,6 @@ class ConfigurableBundleDataImportCommunicationTester extends Actor
             ->save();
     }
 
-    /**
-     * @param string $key
-     *
-     * @return void
-     */
     public function createProductList(string $key): void
     {
         $this->haveProductList([
@@ -79,33 +63,21 @@ class ConfigurableBundleDataImportCommunicationTester extends Actor
         ]);
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundle\Persistence\SpyConfigurableBundleTemplateQuery
-     */
     protected function getConfigurableBundleTemplateQuery(): SpyConfigurableBundleTemplateQuery
     {
         return SpyConfigurableBundleTemplateQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundle\Persistence\SpyConfigurableBundleTemplateSlotQuery
-     */
     protected function getConfigurableBundleTemplateSlotQuery(): SpyConfigurableBundleTemplateSlotQuery
     {
         return SpyConfigurableBundleTemplateSlotQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductImage\Persistence\SpyProductImageSetQuery
-     */
     protected function getProductImageSetQuery(): SpyProductImageSetQuery
     {
         return SpyProductImageSetQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductImage\Persistence\SpyProductImageSetToProductImageQuery
-     */
     protected function getProductImageSetToProductImageQuery(): SpyProductImageSetToProductImageQuery
     {
         return SpyProductImageSetToProductImageQuery::create();

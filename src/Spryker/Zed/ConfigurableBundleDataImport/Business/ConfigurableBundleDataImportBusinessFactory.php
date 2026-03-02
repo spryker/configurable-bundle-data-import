@@ -23,9 +23,6 @@ use Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
  */
 class ConfigurableBundleDataImportBusinessFactory extends DataImportBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getConfigurableBundleTemplateDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($this->getConfig()->getConfigurableBundleTemplateDataImporterConfiguration());
@@ -39,9 +36,6 @@ class ConfigurableBundleDataImportBusinessFactory extends DataImportBusinessFact
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getConfigurableBundleTemplateSlotDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($this->getConfig()->getConfigurableBundleTemplateSlotDataImporterConfiguration());
@@ -57,9 +51,6 @@ class ConfigurableBundleDataImportBusinessFactory extends DataImportBusinessFact
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImporterInterface
-     */
     public function getConfigurableBundleTemplateImageDataImporter(): DataImporterInterface
     {
         $dataImporter = $this->getCsvDataImporterFromConfig($this->getConfig()->getConfigurableBundleTemplateImageDataImporterConfiguration());
@@ -74,41 +65,26 @@ class ConfigurableBundleDataImportBusinessFactory extends DataImportBusinessFact
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createConfigurableBundleTemplateWriterStep(): DataImportStepInterface
     {
         return new ConfigurableBundleTemplateWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createConfigurableBundleTemplateSlotWriterStep(): DataImportStepInterface
     {
         return new ConfigurableBundleTemplateSlotWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createConfigurableBundleTemplateImageWriterStep(): DataImportStepInterface
     {
         return new ConfigurableBundleTemplateImageWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createConfigurableBundleTemplateKeyToIdConfigurableBundleTemplateStep(): DataImportStepInterface
     {
         return new ConfigurableBundleTemplateKeyToIdConfigurableBundleTemplate();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createProductListKeyToIdProductListStep(): DataImportStepInterface
     {
         return new ProductListKeyToIdProductList();

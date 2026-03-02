@@ -55,9 +55,6 @@ class ConfigurableBundleTemplateImageDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -66,9 +63,6 @@ class ConfigurableBundleTemplateImageDataImportPluginTest extends Unit
         $this->tester->ensureProductImageTablesIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         // Arrange
@@ -93,9 +87,6 @@ class ConfigurableBundleTemplateImageDataImportPluginTest extends Unit
         $this->tester->assertProductImageSetDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenConfigurableBundleTemplateNotFoundByKey(): void
     {
         // Arrange
@@ -116,9 +107,6 @@ class ConfigurableBundleTemplateImageDataImportPluginTest extends Unit
         $configurableBundleImageDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testImportThrowsExceptionWhenProductImageSetNotFoundByKey(): void
     {
         // Arrange
@@ -141,9 +129,6 @@ class ConfigurableBundleTemplateImageDataImportPluginTest extends Unit
         $configurableBundleImageDataImportPlugin->import($dataImportConfigurationTransfer);
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act

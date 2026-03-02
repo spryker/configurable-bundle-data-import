@@ -14,9 +14,6 @@ use Orm\Zed\ProductImage\Persistence\SpyProductImageSetQuery;
 
 class ConfigurableBundleDataImportHelper extends Module
 {
-    /**
-     * @return void
-     */
     public function assertConfigurableBundleTemplateDatabaseTablesContainsData(): void
     {
         $configurableBundleTemplateQuery = $this->getConfigurableBundleTemplateQuery();
@@ -27,9 +24,6 @@ class ConfigurableBundleDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return void
-     */
     public function assertConfigurableBundleTemplateSlotDatabaseTablesContainsData(): void
     {
         $configurableBundleTemplateSlotQuery = $this->getConfigurableBundleTemplateSlotQuery();
@@ -40,9 +34,6 @@ class ConfigurableBundleDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return void
-     */
     public function assertProductImageSetDatabaseTablesContainsData(): void
     {
         $productImageSetQuery = $this->getProductImageSetQuery();
@@ -53,25 +44,16 @@ class ConfigurableBundleDataImportHelper extends Module
         );
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundle\Persistence\SpyConfigurableBundleTemplateQuery
-     */
     protected function getConfigurableBundleTemplateQuery(): SpyConfigurableBundleTemplateQuery
     {
         return SpyConfigurableBundleTemplateQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundle\Persistence\SpyConfigurableBundleTemplateSlotQuery
-     */
     protected function getConfigurableBundleTemplateSlotQuery(): SpyConfigurableBundleTemplateSlotQuery
     {
         return SpyConfigurableBundleTemplateSlotQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\ProductImage\Persistence\SpyProductImageSetQuery
-     */
     protected function getProductImageSetQuery(): SpyProductImageSetQuery
     {
         return SpyProductImageSetQuery::create();

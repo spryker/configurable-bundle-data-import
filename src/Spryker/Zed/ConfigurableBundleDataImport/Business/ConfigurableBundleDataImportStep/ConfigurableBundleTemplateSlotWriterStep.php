@@ -16,11 +16,6 @@ use Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface;
 
 class ConfigurableBundleTemplateSlotWriterStep extends PublishAwareStep implements DataImportStepInterface
 {
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $configurableBundleTemplateSlotEntity = $this->createConfigurableBundleTemplateSlotQuery()
@@ -40,9 +35,6 @@ class ConfigurableBundleTemplateSlotWriterStep extends PublishAwareStep implemen
         );
     }
 
-    /**
-     * @return \Orm\Zed\ConfigurableBundle\Persistence\SpyConfigurableBundleTemplateSlotQuery
-     */
     protected function createConfigurableBundleTemplateSlotQuery(): SpyConfigurableBundleTemplateSlotQuery
     {
         return SpyConfigurableBundleTemplateSlotQuery::create();

@@ -33,9 +33,6 @@ class ConfigurableBundleTemplateDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
@@ -43,9 +40,6 @@ class ConfigurableBundleTemplateDataImportPluginTest extends Unit
         $this->tester->ensureConfigurableBundleTablesIsEmpty();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         // Arrange
@@ -64,9 +58,6 @@ class ConfigurableBundleTemplateDataImportPluginTest extends Unit
         $this->tester->assertConfigurableBundleTemplateDatabaseTablesContainsData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         // Act
